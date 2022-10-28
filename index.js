@@ -53,25 +53,25 @@ app.post('/addtodo', jsonParser, (req, res) => {
     )
 })
 // Update a Todo
-app.put('/update/id', jsonParser, (req, res) => {
-    let id = req.body.id;
-    let title = req.body.title;
-    let prioty = req.body.prioty;
-    let status = req.body.status;
-    db.query(
-        // "UPDATE todos SET status=? WHERE id =? ", [status, id], (err, result) => {
-        "UPDATE todos SET title=?,prioty=?,status=? WHERE id =?", [title, prioty, status, id], (err, result) => {
-            if (err) {
-                res.send(err);
-            }
-            else {
-                res.send(result)
-            }
-        }
-    )
+// app.put('/update/id', jsonParser, (req, res) => {
+//     let id = req.body.id;
+//     let title = req.body.title;
+//     let prioty = req.body.prioty;
+//     let status = req.body.status;
+//     db.query(
+//         // "UPDATE todos SET status=? WHERE id =? ", [status, id], (err, result) => {
+//         "UPDATE todos SET title=?,prioty=?,status=? WHERE id =?", [title, prioty, status, id], (err, result) => {
+//             if (err) {
+//                 res.send(err);
+//             }
+//             else {
+//                 res.send(result)
+//             }
+//         }
+//     )
 
 
-})
+// })
 
 // Delete a Todo
 app.delete('/delete/:id', (req, res) => {
